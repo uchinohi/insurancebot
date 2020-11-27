@@ -1,0 +1,123 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - mornin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - ok bye
+- intent: thanks
+  examples: |
+    - Thanks
+    - Thank you
+    - thank you very much
+    - thank u
+    - cool
+    - great
+    - lovely!
+    - ok thanks
+    - thanks
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - yeah
+    - cool
+    - okay
+    - ok
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nothing
+    - nope
+    - nah
+    - na
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
+    - who the fuck are you?
+    - who the hell are you?
+    - who do you think you are?
+- intent: chitchat
+  examples: |
+    - What's the weather?
+    - give me a discount
+    - You are an idiot
+    - i love this person
+    - Real Madrid suck
+    - how are you?
+    - what is this shit?
+    - damn you
+    - what the hell
+    - i don't care about anything
+- intent: thanks+goodbye
+  examples: |
+    - ok cool bye
+    - thanks bye
+    - tata and thank you
+    - awesome cya
+    - nice thanks bye
+    - ok thanks bye
+- intent: deny+thanks
+  examples: |
+    - No thank you
+    - Nope i'm good
+    - Nah thanks
+    - Nope, appreciate it
+    - No worries, thanks
+    - Negative, thanks for asking
+- intent: inform
+  examples: |
+    - Yes it is [9681160280](mobile_number)
+    - It is [9007840540](mobile_number)
+    - [7439223267](mobile_number)
+    - It's [4585](otp)
+    - [1234](otp)
+    - Yes [6789](otp)
+    - [9681160280](mobile_number)
+    - [9681160280](mobile_number)
+    - [1234](otp)
+- regex: mobile_number
+  examples: |
+    - \d{10}
+- regex: otp
+  examples: |
+    - \d{4}

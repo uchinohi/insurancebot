@@ -1,0 +1,49 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 6000
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- inform
+- goodbye
+- affirm
+- deny
+- thanks
+- thanks+goodbye
+- deny+thanks
+- chitchat
+- bot_challenge
+entities:
+- mobile_number
+- otp
+slots:
+  mobile_number:
+    type: text
+    influence_conversation: true
+  otp:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Hey! Welcome to XYZ company. Kindly enter the 10-digit mobile associated with your account for verification.
+  - text: Hello there! Welcome to XYZ. To access our services, enter your connected 10-digit mobile number for verification.
+  utter_enter_otp:
+  - text: Please enter the 4 digit OTP sent to your number.
+  - text: So please enter the 4 digit OTP we sent you.
+  utter_sign_up:
+  - text: Sorry, it seems you are not registered with us. Follow this link to signup- xyz.com/register
+  utter_verified:
+  - text: Great, your number is verified!
+  utter_wrong:
+  - text: Sorry, you have entered a wrong OTP. Try again.
+  utter_goodbye:
+  - text: Okay bye then!
+  - text: Talk to you later then!
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+actions:
+- action_check_number
+- action_check_otp
+- sadqw
+- utter_goodbye
+- utter_greet
