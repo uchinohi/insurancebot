@@ -4,19 +4,24 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - greet
-- inform
 - goodbye
+- thanks
+- inform
 - affirm
 - deny
-- thanks
 - thanks+goodbye
 - deny+thanks
 - chitchat
 - bot_challenge
 entities:
+- claim_no
 - mobile_number
+- option_select
 - otp
 slots:
+  claim_no:
+    type: text
+    influence_conversation: true
   mobile_number:
     type: text
     influence_conversation: true
@@ -34,16 +39,24 @@ responses:
   - text: Sorry, it seems you are not registered with us. Follow this link to signup- xyz.com/register
   utter_verified:
   - text: Great, your number is verified!
+  utter_welcome:
+  - text: You're welcome!
+  - text: My pleasure!
   utter_wrong:
   - text: Sorry, you have entered a wrong OTP. Try again.
+  utter_chitchat:
+  - text: Well, this is not my area of expertise!
+  - text: There are other bots for this!
   utter_goodbye:
-  - text: Okay bye then!
+  - text: Okay bye!
   - text: Talk to you later then!
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
 actions:
 - action_check_number
 - action_check_otp
-- sadqw
+- action_claim_status
+- action_execute_option
 - utter_goodbye
 - utter_greet
+- utter_welcome

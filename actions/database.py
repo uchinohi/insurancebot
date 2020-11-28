@@ -14,3 +14,20 @@ class Query:
             return True
         else:
             return False
+
+    @staticmethod
+    def return_name(number):
+        doc = Query.mobcol.find_one({'number': number})
+        return doc['name']
+
+
+    @staticmethod
+    def return_claims(number):
+        doc = Query.mobcol.find_one({'number': number})
+        return doc['claims']
+
+    @staticmethod
+    def return_claim_status(number, claimno):
+        doc = Query.mobcol.find_one({'number': number})
+        return doc['claims'].get(claimno)
+

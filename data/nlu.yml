@@ -113,8 +113,45 @@ nlu:
     - [1234](otp)
     - Yes [6789](otp)
     - [9681160280](mobile_number)
-    - [9681160280](mobile_number)
-    - [1234](otp)
+    - [9830451045](mobile_number)
+    - [8475964585](mobile_number)
+    - [7004580605](mobile_number)
+    - [8420909089](mobile_number)
+    - [4585](otp)
+    - [9669](otp)
+    - [5467](otp)
+    - [2654](otp)
+    - [1](option_select) please
+    - Yes [2](option_select)
+    - [3](option_select)
+    - [4](option_select)
+    - [5](option_select)
+    - [6](option_select)
+    - [9007840540](mobile_number)
+    - [101010](claim_no)
+    - [898989](claim_no) please
+    - [323232](claim_no)
+    - [121212](claim_no)
+    - Yes [969696](claim_no)
+    - [6789](otp)
+    - [2](option_select)
+    - [787878](claim_no)
+    - [656565](claim_no)
+    - Give me [969696](claim_no)
+    - [212121](claim_no)
+    - [454545](claim_no)
+    - [7854](otp)
+    - [9687](otp)
+    - It's [6547](otp)
+    - [6578](otp)
+    - [2130](otp)
+    - [9007840540](mobile_number)
+    - [6789](otp)
+    - [2](option_select)
+    - [787878](claim_no)
+- regex: claim_no
+  examples: |
+    - \d{6}
 - regex: mobile_number
   examples: |
     - \d{10}

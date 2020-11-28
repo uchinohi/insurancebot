@@ -2,60 +2,106 @@ version: "2.0"
 
 stories:
 
-- story: happy path
+- story: happy path 1
   steps:
   - intent: greet
   - action: utter_greet
   - intent: inform
+    entities:
+    - mobile_number: '9681160280' 
   - action: action_check_number
   - intent: inform
+    entities:
+    - otp: '1234' 
   - action: action_check_otp
+  - intent: inform
+    entities:
+    - option_select: '2'
+  - action: action_execute_option
+  - intent: inform
+    entities:
+    - option_select: '1'
+  - action: action_claim_status
 
-- story: Number sad path
+- story: happy path 2
   steps:
   - intent: greet
   - action: utter_greet
   - intent: inform
+    entities:
+    - mobile_number: '9681160280' 
   - action: action_check_number
-  - or:
-    - intent: affirm
-    - intent: deny
+  - intent: inform
+    entities:
+    - otp: '1234' 
+  - action: action_check_otp
+  - intent: inform
+    entities:
+    - option_select: '2'
+  - action: action_execute_option
+  - intent: inform
+    entities:
+    - claim_no: '656565'
+  - action: action_claim_status
+
+- story: thank you story
+  steps:
+  - intent: thanks
+  - action: utter_welcome
+
+- story: thank you story 2
+  steps:
+  - intent: thanks+goodbye
+  - action: utter_welcome
   - action: utter_goodbye
 
-- story: OTP sad path
+- story: sad path
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: inform
-  - action: action_check_number
-  - intent: inform
-  - action: action_check_otp
   - intent: deny
   - action: utter_goodbye
 
-- story: OTP sad path 2 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: inform
-  - action: action_check_number
-  - intent: inform
-  - action: action_check_otp
-  - intent: affirm
-  - action: utter_enter_otp
-  - intent: inform
-  - action: action_check_otp
+# - story: Number sad path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: inform
+#   - action: action_check_number
 
-- story: OTP sad path 2 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: inform
-  - action: action_check_number
-  - intent: inform
-  - action: action_check_otp
-  - intent: inform
-  - action: action_check_otp
+# - story: OTP sad path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: inform
+#   - action: action_check_number
+#   - intent: deny
+#   - action: utter_goodbye
+
+# - story: OTP sad path 2 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: inform
+#   - action: action_check_number
+#   - intent: inform
+#   - action: action_check_otp
+#   - intent: affirm
+#   - action: utter_enter_otp
+#   - intent: inform
+#   - action: action_check_otp
+
+# - story: OTP sad path 2 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: inform
+#   - action: action_check_number
+#   - intent: inform
+#   - action: action_check_otp
+#   - intent: inform
+#   - action: action_check_otp
+
 - story: interactive_story_1
   steps:
   - intent: greet
@@ -66,8 +112,6 @@ stories:
   - slot_was_set:
     - mobile_number: '9681160280'
   - action: action_check_number
-  - action: sadqw
-  - action: sadqw
 
 - story: interactive_story_2
   steps:
@@ -98,5 +142,201 @@ stories:
   - slot_was_set:
     - otp: '1234'
   - action: action_check_otp
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+    entities:
+    - mobile_number: '9830451045'
+  - slot_was_set:
+    - mobile_number: '9830451045'
+  - action: action_check_number
+  - intent: inform
+    entities:
+    - otp: '4585'
+  - slot_was_set:
+    - otp: '4585'
+  - action: action_check_otp
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+    entities:
+    - mobile_number: '9830451045'
+  - slot_was_set:
+    - mobile_number: '9830451045'
+  - action: action_check_number
+  - intent: inform
+    entities:
+    - otp: '4585'
+  - slot_was_set:
+    - otp: '4585'
+  - action: action_check_otp
+  - intent: inform
+    entities:
+    - option_select: '2'
+  - action: action_execute_option
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+    entities:
+    - mobile_number: '9836941234'
+  - slot_was_set:
+    - mobile_number: '9836941234'
+  - action: action_check_number
+  - intent: inform
+    entities:
+    - otp: '4585'
+  - slot_was_set:
+    - otp: '4585'
+  - action: action_check_otp
+  - intent: inform
+    entities:
+    - option_select: '1'
+  - action: action_execute_option
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+    entities:
+    - mobile_number: '9681160280'
+  - slot_was_set:
+    - mobile_number: '9681160280'
+  - action: action_check_number
+  - intent: inform
+    entities:
+    - otp: '4585'
+  - slot_was_set:
+    - otp: '4585'
+  - action: action_check_otp
+  - intent: inform
+    entities:
+    - option_select: '2'
+  - action: action_execute_option
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+    entities:
+    - mobile_number: '9007840540'
+  - slot_was_set:
+    - mobile_number: '9007840540'
+  - action: action_check_number
+  - intent: inform
+    entities:
+    - otp: '9669'
+  - slot_was_set:
+    - otp: '9669'
+  - action: action_check_otp
+  - intent: inform
+    entities:
+    - option_select: '4'
+  - action: action_execute_option
+  - intent: thanks
+  - action: utter_welcome
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+    entities:
+    - mobile_number: '9007840540'
+  - slot_was_set:
+    - mobile_number: '9007840540'
+  - action: action_check_number
+  - intent: inform
+    entities:
+    - otp: '6789'
+  - slot_was_set:
+    - otp: '6789'
+  - action: action_check_otp
+  - intent: inform
+    entities:
+    - option_select: '2'
+  - action: action_execute_option
+  - intent: inform
+    entities:
+    - claim_no: '787878'
+  - slot_was_set:
+    - claim_no: '787878'
+  - action: action_claim_status
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+    entities:
+    - mobile_number: '9681160280'
+  - slot_was_set:
+    - mobile_number: '9681160280'
+  - action: action_check_number
+  - intent: inform
+    entities:
+    - otp: '4585'
+  - slot_was_set:
+    - otp: '4585'
+  - action: action_check_otp
+  - intent: inform
+    entities:
+    - option_select: '2'
+  - action: action_execute_option
+  - intent: inform
+    entities:
+    - claim_no: '656565'
+  - slot_was_set:
+    - claim_no: '656565'
+  - action: action_claim_status
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+    entities:
+    - mobile_number: '9007840540'
+  - slot_was_set:
+    - mobile_number: '9007840540'
+  - action: action_check_number
+  - intent: inform
+    entities:
+    - otp: '6789'
+  - slot_was_set:
+    - otp: '6789'
+  - action: action_check_otp
+  - intent: inform
+    entities:
+    - option_select: '2'
+  - action: action_execute_option
+  - intent: inform
+    entities:
+    - claim_no: '787878'
+  - slot_was_set:
+    - claim_no: '787878'
+  - action: action_claim_status
+  - intent: thanks
+  - action: utter_welcome
   - intent: goodbye
   - action: utter_goodbye
